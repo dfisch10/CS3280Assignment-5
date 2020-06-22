@@ -7,6 +7,10 @@ namespace Assignment_5
     /// </summary>
     public interface IPostService
     {
+        /// <summary>
+        /// Gets all the specified information of the posts from the IList.
+        /// </summary>
+        /// <returns></returns>
         IList<IPost> GetAll();
 
     }

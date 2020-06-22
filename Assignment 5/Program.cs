@@ -29,7 +29,7 @@ namespace Assignment_5
 
             foreach (var post in posts)
             {
-                DisplayUtility.OutputPostDisplay(post.DisplayPost());
+                DisplayUtility.OutputPostDisplay(post.Display());
 
                 DisplayUtility.OutputPostDisplay(post.DisplayVotes());
 

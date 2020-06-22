@@ -9,14 +9,35 @@ namespace Assignment_5.Posts
 {
     public class Post : IPost
     {
+        #region Properties
+        /// <summary>
+        /// The Getter and Setter property for the Title of the post.
+        /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        /// The Getter and Setter property for the description of the post.
+        /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// The Getter and Setter property for who the post was created by.
+        /// </summary>
         public string CreatedBy { get; set; }
-        [ExcludeFromCodeCoverage]
+       
+        /// <summary>
+        /// The getter and setter property for the date and time for when the post was created.
+        /// </summary>
         public DateTime CreationDateTime { get; set; }
-        [ExcludeFromCodeCoverage]
+       
+        /// <summary>
+        /// An initialized Getter and setter for the Comments list, which keeps track of all the comments (acting like an archive/counter). 
+        /// </summary>
         public List<IComment> Comments { get; set; } = new List<IComment>();
-        [ExcludeFromCodeCoverage]
+       
+        /// <summary>
+        /// Gets the amount of comments that are currently in the Comments List, and returns their count.
+        /// </summary>
         public int TotalComments 
         {
             get 
@@ -30,9 +51,18 @@ namespace Assignment_5.Posts
             } 
         }
 
+        /// <summary>
+        /// Initializes the upVotes variable that is used in the IncreaseUpVotes method.
+        /// </summary>
         private int upVotes;
-        private int downVotes;
 
+        /// <summary>
+        /// Initializes the downVotes variable that is used in the IncreaseDownVotes method.
+        /// </summary>
+        private int downVotes;
+        #endregion
+
+        #region Constructor
         /// <summary>
         /// The constructor for Post type object.Which includes the field for title, description, who it was created by, and the datetime of the comment's creation.
         /// </summary>
@@ -42,14 +72,13 @@ namespace Assignment_5.Posts
         public Post(string title, string description, string createdBy)
         {
             Title = title;
-
             Description = description;
-
             CreatedBy = createdBy;
-
             CreationDateTime = DateTime.UtcNow;
         }
+        #endregion
 
+        #region Methods
         /// <summary>
         /// Displays the current count of upvotes and downvotes.
         /// </summary>
@@ -83,7 +112,7 @@ namespace Assignment_5.Posts
         /// </summary>
         /// <returns>Returns the title, description, creator, and the creation datetime of a Post, in the form of a string statement.</returns>
         [ExcludeFromCodeCoverage]
-        public string DisplayPost()
+        public string Display()
         {
             if (string.IsNullOrEmpty(Title) || string.IsNullOrEmpty(Description) || string.IsNullOrEmpty(CreatedBy) || CreationDateTime.Equals(null))
             {
@@ -98,7 +127,13 @@ namespace Assignment_5.Posts
         /// <param name="comment">An IComment type object.</param>
         public void AddComment(IComment comment)
         {
+            if (string.IsNullOrEmpty(comment.ToString()))
+            {
+                DisplayUtility.ErrorMessageForNullOrEmpty();
+            }
+
             Comments.Add(comment);
         }
+        #endregion
     }
 }

@@ -11,16 +11,30 @@ namespace Assignment_5.Interfaces
     /// </summary>
     public interface IComment
     {
-        #region Properties
+        /// <summary>
+        /// The Getter and Setter property for the Title of the comment.
+        /// </summary>
         public string Title { get; set; }
 
+        /// <summary>
+        /// The Getter and Setter property for the description of the comment.
+        /// </summary>
         public string Description { get; set; }
 
+        /// <summary>
+        /// The Getter and Setter property for who the comment was created by.
+        /// </summary>
         public string CreatedBy { get; set; }
 
+        /// <summary>
+        /// The getter and setter property for the date and time for when the post was created.
+        /// </summary>
         public DateTime CreationDateTime { get; set; }
-        #endregion
 
+        /// <summary>
+        /// Displays the various information for a comment.
+        /// </summary>
+        /// <returns>Returns the specified comment information.</returns>
         string DisplayComment();
     }
 }
