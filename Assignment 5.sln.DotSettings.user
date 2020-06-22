@@ -11,4 +11,7 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::0D30D9D4-AD73-496B-B483-528F1CFFD368::.NETCoreApp,Version=v3.1::Assignment_5.tests.UnitTest1&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f9adf33c_002D8c6a_002D4177_002Daa66_002D416b19a4a44f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
