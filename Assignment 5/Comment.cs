@@ -9,11 +9,17 @@ namespace Assignment_5.Comments
 {
     public class Comment : IComment
     {
+        #region Properties
         public string Title { get; set; }
-        public string Description { get; set; }
-        public string CreatedBy { get; set; }
-        public string PostTitle { get; }
 
+        public string Description { get; set; }
+
+        public string CreatedBy { get; set; }
+
+        public string PostTitle { get; }
+        #endregion
+
+        #region ConstructorAndMethods
         [ExcludeFromCodeCoverage]
         public DateTime CreationDateTime { get; set; }
 
@@ -26,11 +32,8 @@ namespace Assignment_5.Comments
         public Comment(string title, string description, string createdBy)
         {
             Title = title;
-
             Description = description;
-
             CreatedBy = createdBy;
-
             CreationDateTime = DateTime.UtcNow;
         }
 
@@ -48,5 +51,6 @@ namespace Assignment_5.Comments
 
             return ("_____________________________________\n\n" + "Title: " + Title + "\n\nDescription: " + Description + "\n\nCreated By: " + CreatedBy + "\n" + CreationDateTime);
         }
+        #endregion
     }
 }

@@ -12,17 +12,30 @@ namespace Assignment_5
     /// </summary>
     public interface IPost
     {
+        #region Properties
         int TotalComments { get; }
-        string Title { get; set; }
-        string Description { get; set; }
-        string CreatedBy { get; set; }
-        DateTime CreationDateTime { get; set; }
-        List<IComment> Comments { get; set; }
 
+        string Title { get; set; }
+
+        string Description { get; set; }
+
+        string CreatedBy { get; set; }
+
+        DateTime CreationDateTime { get; set; }
+
+        List<IComment> Comments { get; set; }
+        #endregion
+
+        #region Methods
         int IncreaseUpVotes();
+
         int IncreaseDownVotes();
+
         string DisplayVotes();
-        string DisplayPost();
+
+        string Display();
+
         void AddComment(IComment comment);
+        #endregion
     }
 }
