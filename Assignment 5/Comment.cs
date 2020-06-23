@@ -31,7 +31,10 @@ namespace Assignment_5.Comments
         public DateTime CreationDateTime { get; set; }
         #endregion
 
-        public string PostTitle { get; set; }
+        /// <summary>
+        /// The getter property which gets the title of the post that the comment is affiliated with.
+        /// </summary>
+        public string PostTitle { get; }
 
         #region Constructor
         [ExcludeFromCodeCoverage]

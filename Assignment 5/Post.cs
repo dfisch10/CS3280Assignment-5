@@ -127,12 +127,13 @@ namespace Assignment_5.Posts
         /// <param name="comment">An IComment type object.</param>
         public void AddComment(IComment comment)
         {
-            if (string.IsNullOrEmpty(comment.ToString()))
+            if (comment is null)
             {
                 DisplayUtility.ErrorMessageForNullOrEmpty();
+                return;
             }
 
-            Comments.Add(comment);
+            Comments?.Add(comment);
         }
         #endregion
     }
